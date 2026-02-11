@@ -1,0 +1,38 @@
+experiment:
+  name: reference_dynamics
+
+circuit:
+  interneuron_name: ndnf
+
+  # 4 time constants (E, PV, SST, interneuron of interest NDNF/VIP) [ms]
+  tau: [10.0, 10.0, 10.0, 10.0]
+
+  # initial rates for SST and 4th interneuron of interest (NDNF/VIP) [Hz]
+  rS0: 2.0
+  rI0: 2.0
+
+  # rate step (used to build rE_vec and rP_vec grid)
+  step_rX: 0.5
+
+  # external stimuli values for E, PV and interneuron of interest (NDNF/VIP)
+  I_stim_E: 0.3
+  I_stim_P: 0.3
+  I_mod_I: 0.3
+
+  # I/O function parameters
+  power: 2.0
+  mult_f: 0.25
+
+  # IMPORTANT: 4x4 matrix. Must flatten() to your wEE...wII order.
+  W:
+    - [0.8, 0.5, 0.3, 0.3]
+    - [1.0, 0.6, 0.8, 0.0]
+    - [0.2, 0.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.3, 0.0]
+
+grid:
+  max_rEP: 2.0
+  alfa: 10.0
+
+output:
+  npz_path: reference/reference_dynamics.npz
