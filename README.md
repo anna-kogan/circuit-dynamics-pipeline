@@ -1,6 +1,6 @@
-# Circuit Pipeline — neural circuit analysis (grid + plots + manifest)
+[![CI](https://github.com/anna-kogan/circuit-dynamics-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/anna-kogan/circuit-dynamics-pipeline/actions/workflows/ci.yml)
 
-![CI](https://github.com/anna-kogan/circcuit-dynamics-pipeline/actions/workflows/ci.yml/badge.svg)
+# Circuit Pipeline — neural circuit analysis (grid + plots + manifest)
 
 This repository is a reproducible pipeline for analyzing a 4-population (E, PV, SST, VIP/NDNF) neural circuit model.
 It runs a parameter grid, saves results to `.npz`, generates plots, and records metadata in a `manifest.json`.
