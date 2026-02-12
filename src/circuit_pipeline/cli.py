@@ -23,11 +23,13 @@ def parse_circuit_params(cfg: dict) -> tuple[CircuitParams, float, float, float]
 
     W = np.array(circuit["W"], dtype=float)
     tau = np.array(circuit["tau"], dtype=float)
+    step_rX = float(circuit["step_rX"])
 
     params = CircuitParams(
         interneuron_name=str(circuit["interneuron_name"]),
         W=W,
         tau=tau,
+        step_rX=step_rX,
         rS0=float(circuit["rS0"]),
         rI0=float(circuit["rI0"]),
         I_stim_E=float(circuit.get("I_stim_E", 0.0)),
@@ -39,7 +41,6 @@ def parse_circuit_params(cfg: dict) -> tuple[CircuitParams, float, float, float]
 
     max_rEP = float(grid["max_rEP"])
     alfa = float(grid["alfa"])
-    step_rX = float(circuit["step_rX"])
 
     return params, max_rEP, alfa, step_rX
 
